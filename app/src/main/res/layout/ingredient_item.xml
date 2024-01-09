@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="2dp"
+    android:paddingTop="2dp"
+    android:paddingStart="8dp"
+    android:layout_margin="4dp">
+
+    <TextView
+        android:id="@+id/ingredientNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:text="Nazwa"/>
+
+    <TextView
+        android:id="@+id/ingredientAmountTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:paddingEnd="6dp"
+        android:text="Ilość" />
+
+    <TextView
+        android:id="@+id/ingredientUnitTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Jednostka" />
+    <ImageView
+        android:id="@+id/editIngredientIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit" />
+
+    <ImageView
+        android:id="@+id/deleteIngredientIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close" />
+</LinearLayout>

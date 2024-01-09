@@ -1,0 +1,289 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Recipe.RecipeInfoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|end">
+
+            <!-- Obraz przepisu -->
+            <ImageView
+                android:id="@+id/recipeIV"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <Button
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                android:id="@+id/followButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zapisz przepis"
+                app:icon="@drawable/ic_follow"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="bottom|end"
+                />
+            <Button
+                style="@style/Widget.Material3.Button.Icon"
+                android:id="@+id/unfollow_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zapisano"
+                app:icon="@drawable/ic_follow"
+                android:visibility="gone"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="bottom|end"
+                />
+
+        </FrameLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleLine="true"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp">
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+
+
+        <!-- Nazwa przepisu -->
+        <TextView
+            android:id="@+id/recipeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_gravity="start"/>
+        <!-- Opis przepisu -->
+        <TextView
+            android:id="@+id/recipeDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_gravity="start"/>
+
+        <LinearLayout
+            android:id="@+id/iconsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+                <!-- Trudność przepisu ikona-->
+                <ImageView
+                    android:id="@+id/difficultyIV"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_difficulty"/>
+                <!-- Trudność przepisu IconLabel -->
+                <TextView
+                    android:id="@+id/recipeIconLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Poziom\ntrudności"
+                    android:textAlignment="center"
+                    />
+                <TextView
+                    android:id="@+id/recipeDifficulty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Difficulty"
+                    android:paddingTop="4dp"
+                    android:textSize="17sp"
+                   />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+                <!-- Porcje ikona-->
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_portions"/>
+                <!-- Porcje IconLabel -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Porcje\n"
+                    />
+                <!-- Porcje -->
+                <TextView
+                    android:id="@+id/recipePortions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Portions"
+                    android:paddingTop="4dp"
+                    android:textSize="17sp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+                <!-- Czas ikona-->
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_time"/>
+                <!-- Czas IconLabel -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Czas\nprzygotowania"
+                    android:textAlignment="center"
+                    />
+                <!-- Czas -->
+                <TextView
+                    android:id="@+id/recipeTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    android:text="Time"
+                    android:textSize="17sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+                <!-- Kalorie ikona-->
+                <ImageView
+                    android:id="@+id/caloriesIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_calories"/>
+                <!-- Kalorie IconLabel -->
+                <TextView
+                    android:id="@+id/caloriesIconLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kalorie\n"
+                    />
+                <!-- Kalorie -->
+                <TextView
+                    android:id="@+id/recipeCalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calories"
+                    android:paddingTop="4dp"
+                    android:textSize="17sp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- Składniki Label -->
+        <TextView
+            android:id="@+id/labelIngredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Składniki:"
+            android:textSize="18sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:textStyle="bold"
+            android:layout_gravity="start"/>
+
+        <!-- Składniki -->
+        <TextView
+            android:id="@+id/recipeIngredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingredients"
+            android:textSize="18sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_gravity="start"/>
+        <!-- Instrukcje Label -->
+        <TextView
+            android:id="@+id/labelInstructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sposób przygotowania:"
+            android:textSize="18sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:textStyle="bold"
+            android:layout_gravity="start"/>
+        <!-- Instrukcje -->
+        <TextView
+            android:id="@+id/recipeInstructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instructions"
+            android:textSize="18sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_gravity="start"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="3.25"
+            android:stepSize="0.5"
+            android:progressTint="#EFCB16"/>
+
+        <TextView
+            android:id="@+id/ratingTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ocena użtykowników: 3,25"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/userRatingTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Twoja ocena: 5"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/commentsButton"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:text="Komentarze" />
+    </LinearLayout>
+</ScrollView>

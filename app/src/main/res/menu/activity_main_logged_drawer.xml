@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Strona główna"
+            android:checkable="true"/>
+        <item
+            android:id="@+id/nav_categories"
+            android:title="Kategorie"
+            android:checkable="true"/>
+        <item
+            android:id="@+id/nav_fridge"
+            android:title="Twoja lodówka"
+            android:checkable="true"/>
+        <item
+            android:id="@+id/nav_ranking"
+            android:title="Ranking przepisów"
+            android:checkable="true"/>
+        <item
+            android:id="@+id/nav_myRecipes"
+            android:title="Moje przepisy"
+            android:checkable="true"/>
+        <item
+            android:id="@+id/nav_addRecipe"
+            android:title="Dodaj przepis"
+            android:checkable="true"/>
+        <item
+            android:id="@+id/nav_savedRecipes"
+            android:title="Książka kucharska"
+            android:checkable="true"/>
+    </group>
+
+</menu>

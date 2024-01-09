@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ECooker" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/light_green_primary</item>
+        <item name="colorPrimaryDark">@color/light_green_primary_dark</item>
+        <item name="android:fontFamily">@font/andika</item>
+    </style>
+    <style name="TextViewWithBorder" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="android:background">@drawable/border_shape</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <style name="Theme.ECooker" parent="Base.Theme.ECooker" />
+
+    <style name="Theme.ECooker.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ECooker.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

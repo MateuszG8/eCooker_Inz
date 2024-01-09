@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+
+    <fragment
+        android:id="@+id/nav_categories"
+        android:name="com.example.ecooker.ui.categories.CategoriesFragment"
+        android:label="Kategorie"
+        tools:layout="@layout/fragment_categories" />
+    <fragment
+        android:id="@+id/nav_ranking"
+        android:name="com.example.ecooker.ui.ranking.RankingFragment"
+        android:label="Ranking przepisów"
+        tools:layout="@layout/fragment_ranking">
+        <action
+            android:id="@+id/action_nav_ranking_to_nav_RecipeInfo"
+            app:destination="@id/nav_recipeInfo">
+            <argument
+                android:name="recipe"
+                app:argType="com.example.ecooker.models.Recipe"
+                app:nullable="false" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_fridge"
+        android:name="com.example.ecooker.ui.fridge.FridgeFragment"
+        android:label="Twoja lodówka"
+        tools:layout="@layout/fragment_fridge" />
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.ecooker.ui.home.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_RecipeInfo"
+            app:destination="@id/nav_recipeInfo">
+            <argument
+                android:name="recipe"
+                app:argType="com.example.ecooker.models.Recipe"
+                app:nullable="false" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.example.ecooker.ui.login.LoginFragment"
+        android:label="Logowanie"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_nav_login_to_nav_home"
+            app:popUpTo="@id/nav_login"
+            app:popUpToInclusive="true"
+            app:destination="@id/nav_home"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="com.example.ecooker.ui.register.RegisterFragment"
+        android:label="Rejestracja"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_nav_register_to_confirmEmail"
+            app:popUpTo="@id/nav_register"
+            app:popUpToInclusive="true"
+            app:destination="@id/nav_confirmEmail"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_addRecipe"
+        android:name="com.example.ecooker.ui.addRecipe.AddRecipeFragment"
+        android:label="Dodaj przepis"
+        tools:layout="@layout/fragment_add_recipe">
+        <action
+            android:id="@+id/action_nav_addRecipe_to_nav_home"
+            app:popUpTo="@id/nav_addRecipe"
+            app:popUpToInclusive="true"
+            app:destination="@id/nav_home"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_recipeInfo"
+        android:name="com.example.ecooker.ui.Recipe.RecipeInfoFragment">
+        <argument
+            android:name="recipe"
+            app:argType="com.example.ecooker.models.Recipe"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_editProfile"
+        android:name="com.example.ecooker.ui.editProfile.EditProfileFragment"
+        android:label="Edytuj profil"
+        tools:layout="@layout/fragment_edit_profile" />
+    <action
+        android:id="@+id/action_global_to_profileFragment"
+        app:destination="@id/nav_editProfile" />
+    <action
+        android:id="@+id/action_global_to_searchFragment"
+        app:destination="@id/nav_search" />
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.example.ecooker.ui.search.SearchFragment"
+        android:label="@string/searchQuery"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_nav_search_to_nav_RecipeInfo"
+            app:destination="@id/nav_recipeInfo">
+            <argument
+                android:name="recipe"
+                app:argType="com.example.ecooker.models.Recipe"
+                app:nullable="false" />
+        </action>
+        <argument
+            android:name="query"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_editRecipe"
+        android:name="com.example.ecooker.ui.editRecipe.EditRecipeFragment"
+        android:label="Edytuj przepis"
+        tools:layout="@layout/fragment_edit_recipe">
+        <argument
+            android:name="recipe"
+            app:argType="com.example.ecooker.models.Recipe"/>
+        <action
+            android:id="@+id/action_editRecipe_home_to_nav_myRecipes"
+            app:popUpTo="@id/nav_editRecipe"
+            app:popUpToInclusive="true"
+            app:destination="@id/nav_myRecipes"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_myRecipes"
+        android:name="com.example.ecooker.ui.myRecipes.MyRecipesFragment"
+        android:label="Twoje przepisy"
+        tools:layout="@layout/fragment_my_recipes">
+        <action
+            android:id="@+id/action_myRecipes_home_to_nav_RecipeInfo"
+            app:destination="@id/nav_recipeInfo">
+            <argument
+                android:name="recipe"
+                app:argType="com.example.ecooker.models.Recipe"
+                app:nullable="false" />
+        </action>
+        <action
+            android:id="@+id/action_nav_myRecipes_to_nav_editRecipe"
+            app:destination="@id/nav_editRecipe">
+            <argument
+                android:name="recipe"
+                app:argType="com.example.ecooker.models.Recipe"
+                app:nullable="false" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_savedRecipes"
+        android:name="com.example.ecooker.ui.savedRecipes.SavedRecipesFragment"
+        android:label="Twoja książka kucharska"
+        tools:layout="@layout/fragment_saved_recipes">
+        <action
+            android:id="@+id/action_savedRecipes_to_RecipeInfo"
+            app:destination="@id/nav_recipeInfo">
+            <argument
+                android:name="recipe"
+                app:argType="com.example.ecooker.models.Recipe"
+                app:nullable="false" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_confirmEmail"
+        android:name="com.example.ecooker.ui.confirmEmail.ConfirmEmailFragment"
+        android:label="Aktywuj konto"
+        tools:layout="@layout/fragment_confirm_email" >
+        <action
+            android:id="@+id/action_nav_confirmEmail_to_login"
+            app:popUpTo="@id/nav_confirmEmail"
+            app:popUpToInclusive="true"
+            app:destination="@id/nav_login"/>
+    </fragment>
+</navigation>
